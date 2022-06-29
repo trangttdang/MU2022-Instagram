@@ -10,9 +10,12 @@
 		2B0580BFF4C5E3875AEB98A3 /* Pods_InstagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D6A6B10D8AA55FE63BBDA3 /* Pods_InstagramTests.framework */; };
 		3987F140E9035AF627E0F60F /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4CBB5C4CF79353C717C9E4 /* Pods_Instagram.framework */; };
 		468240AB7D4EBA8BE52606DF /* Pods_Instagram_InstagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E47EB6E12A5F1762D4CA87 /* Pods_Instagram_InstagramUITests.framework */; };
+		942539BD286A7A4E00EA0EF8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942539BC286A7A4E00EA0EF8 /* LoginViewController.m */; };
+		942539C0286A7A6C00EA0EF8 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942539BF286A7A6C00EA0EF8 /* HomeFeedViewController.m */; };
+		942539C3286A7A9900EA0EF8 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942539C2286A7A9900EA0EF8 /* ComposeViewController.m */; };
+		942539C6286A7B1A00EA0EF8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942539C5286A7B1A00EA0EF8 /* ProfileViewController.m */; };
 		949D0774286A65480058C9D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 949D0773286A65480058C9D7 /* AppDelegate.m */; };
 		949D0777286A65480058C9D7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 949D0776286A65480058C9D7 /* SceneDelegate.m */; };
-		949D077A286A65480058C9D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949D0779286A65480058C9D7 /* ViewController.m */; };
 		949D077D286A65480058C9D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949D077B286A65480058C9D7 /* Main.storyboard */; };
 		949D077F286A65490058C9D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 949D077E286A65490058C9D7 /* Assets.xcassets */; };
 		949D0782286A65490058C9D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949D0780286A65490058C9D7 /* LaunchScreen.storyboard */; };
@@ -47,13 +50,19 @@
 		4687C81FD3935158A0C92DAD /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 		5E4CBB5C4CF79353C717C9E4 /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		878D66AFD8DF4675A301FDAA /* Pods-Instagram-InstagramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-InstagramUITests.release.xcconfig"; path = "Target Support Files/Pods-Instagram-InstagramUITests/Pods-Instagram-InstagramUITests.release.xcconfig"; sourceTree = "<group>"; };
+		942539BB286A7A4E00EA0EF8 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		942539BC286A7A4E00EA0EF8 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		942539BE286A7A6C00EA0EF8 /* HomeFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewController.h; sourceTree = "<group>"; };
+		942539BF286A7A6C00EA0EF8 /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
+		942539C1286A7A9900EA0EF8 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		942539C2286A7A9900EA0EF8 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		942539C4286A7B1A00EA0EF8 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		942539C5286A7B1A00EA0EF8 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		949D076F286A65480058C9D7 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949D0772286A65480058C9D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		949D0773286A65480058C9D7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		949D0775286A65480058C9D7 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		949D0776286A65480058C9D7 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		949D0778286A65480058C9D7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		949D0779286A65480058C9D7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		949D077C286A65480058C9D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		949D077E286A65490058C9D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		949D0781286A65490058C9D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,6 +130,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		942539BA286A7A2900EA0EF8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				942539C4286A7B1A00EA0EF8 /* ProfileViewController.h */,
+				942539C5286A7B1A00EA0EF8 /* ProfileViewController.m */,
+				942539BB286A7A4E00EA0EF8 /* LoginViewController.h */,
+				942539BC286A7A4E00EA0EF8 /* LoginViewController.m */,
+				942539BE286A7A6C00EA0EF8 /* HomeFeedViewController.h */,
+				942539BF286A7A6C00EA0EF8 /* HomeFeedViewController.m */,
+				942539C1286A7A9900EA0EF8 /* ComposeViewController.h */,
+				942539C2286A7A9900EA0EF8 /* ComposeViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		949D0766286A65480058C9D7 = {
 			isa = PBXGroup;
 			children = (
@@ -146,12 +170,11 @@
 		949D0771286A65480058C9D7 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				942539BA286A7A2900EA0EF8 /* ViewController */,
 				949D0772286A65480058C9D7 /* AppDelegate.h */,
 				949D0773286A65480058C9D7 /* AppDelegate.m */,
 				949D0775286A65480058C9D7 /* SceneDelegate.h */,
 				949D0776286A65480058C9D7 /* SceneDelegate.m */,
-				949D0778286A65480058C9D7 /* ViewController.h */,
-				949D0779286A65480058C9D7 /* ViewController.m */,
 				949D077B286A65480058C9D7 /* Main.storyboard */,
 				949D077E286A65490058C9D7 /* Assets.xcassets */,
 				949D0780286A65490058C9D7 /* LaunchScreen.storyboard */,
@@ -418,8 +441,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				949D077A286A65480058C9D7 /* ViewController.m in Sources */,
+				942539C0286A7A6C00EA0EF8 /* HomeFeedViewController.m in Sources */,
+				942539BD286A7A4E00EA0EF8 /* LoginViewController.m in Sources */,
 				949D0774286A65480058C9D7 /* AppDelegate.m in Sources */,
+				942539C3286A7A9900EA0EF8 /* ComposeViewController.m in Sources */,
+				942539C6286A7B1A00EA0EF8 /* ProfileViewController.m in Sources */,
 				949D0785286A65490058C9D7 /* main.m in Sources */,
 				949D0777286A65480058C9D7 /* SceneDelegate.m in Sources */,
 			);
