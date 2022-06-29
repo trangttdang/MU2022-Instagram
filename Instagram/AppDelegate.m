@@ -28,6 +28,9 @@
     }];
 
     [Parse initializeWithConfiguration:config];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"HomeTabBarController"];
+//    self.window.rootViewController = navigationController;
 //    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
 //    gameScore[@"score"] = @1337;
 //    gameScore[@"playerName"] = @"Sean Plott";

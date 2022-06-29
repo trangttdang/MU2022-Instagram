@@ -6,6 +6,10 @@
 //
 
 #import "HomeFeedViewController.h"
+#import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "Parse/Parse.h"
+#import "SceneDelegate.h"
 
 @interface HomeFeedViewController ()
 
@@ -16,6 +20,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)logoutUser:(id)sender {
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        if (error != nil) {
+            NSLog(@"User log in failed: %@", error.localizedDescription);
+        } else {
+            NSLog(@"User loged out successfully");
+            // display view controller that needs to shown after successful login
+            SceneDelegate *mySceneDelegate = (SceneDelegate * ) UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
+
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+            mySceneDelegate.window.rootViewController = loginViewController;
+        }
+        
+        // PFUser.current() will now be nil
+    }];
 }
 
 /*
