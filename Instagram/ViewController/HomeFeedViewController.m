@@ -33,10 +33,10 @@
     [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:(UIControlEventValueChanged)];
     [self.homeFeedTableView insertSubview:refreshControl atIndex:0];
    
-    [self reloadData];
+    [self reloadData:10];
 }
 - (void)beginRefresh:(UIRefreshControl *)refreshControl {
-    [self reloadData];
+    [self reloadData:10];
     [refreshControl endRefreshing];
 
 }
@@ -97,13 +97,13 @@
 
 }
 
-- (void)reloadData{
+- (void)reloadData:(NSInteger)count{
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     //    [query whereKey:@"likesCount" greaterThan:@100];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
-    query.limit = 20;
+    query.limit = count;
     
 
     // fetch data asynchronously
@@ -127,10 +127,10 @@
     viewController.post = post;
     [self.navigationController pushViewController: viewController animated:YES];
 }
-//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if(indexPath.row + 1 == [self.arrayOfPosts count]){
-//        [self reloadData:[self.arrayOfPosts count] + 20];
-//    }
-//}
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row + 1 == [self.arrayOfPosts count]){
+        [self reloadData:[self.arrayOfPosts count] + 10];
+    }
+}
 
 @end
