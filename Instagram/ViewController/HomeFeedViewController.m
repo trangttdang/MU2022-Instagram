@@ -34,6 +34,9 @@
     [self.homeFeedTableView insertSubview:refreshControl atIndex:0];
    
     [self reloadData:10];
+    
+//    [self.homeFeedTableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:HeaderViewIdentifier];
+    
 }
 - (void)beginRefresh:(UIRefreshControl *)refreshControl {
     [self reloadData:10];
@@ -52,6 +55,20 @@
     [cell.imagePostImageView loadInBackground];
     cell.captionPostLabel.text = post.caption;
 //    cell.delegate  = self;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    // Configure the input format to parse the date string
+    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
+    NSDate *datePostDetail = post.createdAt;
+    //Configure output format
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    formatter.timeStyle = NSDateFormatterShortStyle;
+    // Convert Date to String
+    
+    cell.datePostedLabel.text = [formatter stringFromDate:datePostDetail];
+    
+    
+    cell.usernameLabel.text = post.author.username;
+    
     return cell;
 }
 

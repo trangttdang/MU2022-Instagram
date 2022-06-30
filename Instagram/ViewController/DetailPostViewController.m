@@ -32,6 +32,7 @@
     formatter.dateStyle = NSDateFormatterShortStyle;
     formatter.timeStyle = NSDateFormatterShortStyle;
     // Convert Date to String
+    
     self.detailTimestampLabel.text = [formatter stringFromDate:datePostDetail];
 }
 
