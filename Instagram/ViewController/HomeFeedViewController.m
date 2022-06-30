@@ -12,6 +12,7 @@
 #import "SceneDelegate.h"
 #import "ComposeViewController.h"
 #import "PostCell.h"
+#import "DetailPostViewController.h"
 
 @interface HomeFeedViewController () <ComposeViewControllerDelegate, PostCellDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *homeFeedTableView;
@@ -28,7 +29,16 @@
     // Do any additional setup after loading the view.
     self.homeFeedTableView.dataSource = self;
     self.homeFeedTableView.delegate = self;
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:(UIControlEventValueChanged)];
+    [self.homeFeedTableView insertSubview:refreshControl atIndex:0];
+   
     [self reloadData];
+}
+- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+    [self reloadData];
+    [refreshControl endRefreshing];
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -110,5 +120,17 @@
     }];
     
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DetailPostViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailPostViewController"];
+    Post *post = self.arrayOfPosts[indexPath.row];
+    viewController.post = post;
+    [self.navigationController pushViewController: viewController animated:YES];
+}
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+//    if(indexPath.row + 1 == [self.arrayOfPosts count]){
+//        [self reloadData:[self.arrayOfPosts count] + 20];
+//    }
+//}
 
 @end
