@@ -14,6 +14,8 @@
 		942539C0286A7A6C00EA0EF8 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942539BF286A7A6C00EA0EF8 /* HomeFeedViewController.m */; };
 		942539C3286A7A9900EA0EF8 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942539C2286A7A9900EA0EF8 /* ComposeViewController.m */; };
 		942539C6286A7B1A00EA0EF8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942539C5286A7B1A00EA0EF8 /* ProfileViewController.m */; };
+		942539CD286D091E00EA0EF8 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 942539CB286D091E00EA0EF8 /* Post.m */; };
+		942539D0286D20F000EA0EF8 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 942539CF286D20F000EA0EF8 /* PostCell.m */; };
 		949D0774286A65480058C9D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 949D0773286A65480058C9D7 /* AppDelegate.m */; };
 		949D0777286A65480058C9D7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 949D0776286A65480058C9D7 /* SceneDelegate.m */; };
 		949D077D286A65480058C9D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949D077B286A65480058C9D7 /* Main.storyboard */; };
@@ -58,6 +60,10 @@
 		942539C2286A7A9900EA0EF8 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		942539C4286A7B1A00EA0EF8 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		942539C5286A7B1A00EA0EF8 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		942539CB286D091E00EA0EF8 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		942539CC286D091E00EA0EF8 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		942539CE286D20F000EA0EF8 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		942539CF286D20F000EA0EF8 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		949D076F286A65480058C9D7 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949D0772286A65480058C9D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		949D0773286A65480058C9D7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -145,6 +151,24 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		942539C7286CD7F300EA0EF8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				942539CC286D091E00EA0EF8 /* Post.h */,
+				942539CB286D091E00EA0EF8 /* Post.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		942539D1286D20F600EA0EF8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				942539CE286D20F000EA0EF8 /* PostCell.h */,
+				942539CF286D20F000EA0EF8 /* PostCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		949D0766286A65480058C9D7 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +194,8 @@
 		949D0771286A65480058C9D7 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				942539D1286D20F600EA0EF8 /* Cell */,
+				942539C7286CD7F300EA0EF8 /* Models */,
 				942539BA286A7A2900EA0EF8 /* ViewController */,
 				949D0772286A65480058C9D7 /* AppDelegate.h */,
 				949D0773286A65480058C9D7 /* AppDelegate.m */,
@@ -446,8 +472,10 @@
 				949D0774286A65480058C9D7 /* AppDelegate.m in Sources */,
 				942539C3286A7A9900EA0EF8 /* ComposeViewController.m in Sources */,
 				942539C6286A7B1A00EA0EF8 /* ProfileViewController.m in Sources */,
+				942539D0286D20F000EA0EF8 /* PostCell.m in Sources */,
 				949D0785286A65490058C9D7 /* main.m in Sources */,
 				949D0777286A65480058C9D7 /* SceneDelegate.m in Sources */,
+				942539CD286D091E00EA0EF8 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +652,8 @@
 				DEVELOPMENT_TEAM = B66G8U4UU4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Instagram/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera access to take pictures";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need library access to upload images";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -634,7 +664,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.Instagram;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.InstagramTrang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -652,6 +682,8 @@
 				DEVELOPMENT_TEAM = B66G8U4UU4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Instagram/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera access to take pictures";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need library access to upload images";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -662,7 +694,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.Instagram;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.InstagramTrang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

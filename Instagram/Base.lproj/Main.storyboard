@@ -72,14 +72,14 @@
             <objects>
                 <viewController storyboardIdentifier="ComposeViewController" id="6Jf-21-7YE" customClass="ComposeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WDl-dA-ye5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wc9-0k-EMC">
                                 <rect key="frame" x="20" y="88" width="145" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write a caption..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VV8-sW-gda">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VV8-sW-gda">
                                 <rect key="frame" x="187" y="97" width="207" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -94,7 +94,7 @@
                     <navigationItem key="navigationItem" id="6G6-yd-Whm">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="8on-Pk-XOz">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="QuS-3J-7If">
-                                <rect key="frame" x="20" y="11" width="92" height="34.5"/>
+                                <rect key="frame" x="20" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
@@ -102,13 +102,20 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="88b-1G-pRw">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="vZA-o5-qEq">
-                                <rect key="frame" x="302" y="11" width="92" height="34.5"/>
+                                <rect key="frame" x="302" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Share"/>
+                                <connections>
+                                    <action selector="didTapPost:" destination="6Jf-21-7YE" eventType="touchUpInside" id="gVx-mx-zdM"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="captionPostTextView" destination="VV8-sW-gda" id="XBv-p9-m0D"/>
+                        <outlet property="imagePostImageView" destination="Wc9-0k-EMC" id="LeG-wF-e3m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xb3-oC-4aN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,26 +134,40 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="371" id="Yf3-ZJ-Lae">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="371"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="523" id="Yf3-ZJ-Lae" customClass="PostCell">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="523"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yf3-ZJ-Lae" id="cww-QH-pDd">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="371"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="523"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l3y-Tt-rah">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="322"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l3y-Tt-rah" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="414" id="gpC-uh-X9E"/>
+                                                        <constraint firstAttribute="width" constant="414" id="h3t-PO-lvr"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is picture description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrM-iO-H3z">
-                                                    <rect key="frame" x="20" y="339" width="374" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is picture description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrM-iO-H3z">
+                                                    <rect key="frame" x="16" y="422" width="196" height="37"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="l3y-Tt-rah" firstAttribute="top" secondItem="cww-QH-pDd" secondAttribute="top" id="5hx-hY-Spq"/>
+                                                <constraint firstItem="wrM-iO-H3z" firstAttribute="leading" secondItem="cww-QH-pDd" secondAttribute="leading" constant="16" id="OdL-Nu-Zys"/>
+                                                <constraint firstAttribute="bottom" secondItem="wrM-iO-H3z" secondAttribute="bottom" constant="64" id="SaN-16-MOM"/>
+                                                <constraint firstAttribute="trailing" secondItem="l3y-Tt-rah" secondAttribute="trailing" id="U9A-s4-xbi"/>
+                                                <constraint firstItem="l3y-Tt-rah" firstAttribute="leading" secondItem="cww-QH-pDd" secondAttribute="leading" id="efX-1b-Veb"/>
+                                                <constraint firstItem="wrM-iO-H3z" firstAttribute="top" secondItem="l3y-Tt-rah" secondAttribute="bottom" constant="8" id="tSo-R4-n4i"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="captionPostLabel" destination="wrM-iO-H3z" id="dop-Du-Pa7"/>
+                                            <outlet property="imagePostImageView" destination="l3y-Tt-rah" id="Mpm-WN-dT7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -174,17 +195,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="insta_camera_btn"/>
+                                <connections>
+                                    <action selector="didTapCompose:" destination="GRF-D5-foa" eventType="touchUpInside" id="5QK-jH-AGz"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="jFa-Vf-YXN" kind="presentation" id="3OR-aR-JwJ"/>
+                        <outlet property="homeFeedTableView" destination="AvL-Uu-gvw" id="Y6g-nc-HLQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOV-W3-abL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="VSY-yW-PjL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6107" y="-451"/>
+            <point key="canvasLocation" x="6105.7971014492759" y="-451.33928571428567"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Kru-EO-mhD">
@@ -270,7 +294,7 @@
                     <tabBarItem key="tabBarItem" title="Item 2" id="hEX-pq-GEk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EUN-np-EM0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

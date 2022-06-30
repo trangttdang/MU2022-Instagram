@@ -1,22 +1,38 @@
 PODS:
+  - Bolts-Swift (1.5.0)
   - Bolts/Tasks (1.9.1)
   - Parse (1.19.3):
     - Parse/Core (= 1.19.3)
   - Parse/Core (1.19.3):
     - Bolts/Tasks (= 1.9.1)
+  - Parse/UI (1.19.3):
+    - Parse/Core
+  - ParseLiveQuery (2.8.1):
+    - Bolts-Swift (~> 1.5.0)
+    - Parse (~> 1.19.0)
+    - Starscream (~> 4.0.4)
+  - Starscream (4.0.4)
 
 DEPENDENCIES:
   - Parse
+  - Parse/UI
+  - ParseLiveQuery
 
 SPEC REPOS:
   trunk:
     - Bolts
+    - Bolts-Swift
     - Parse
+    - ParseLiveQuery
+    - Starscream
 
 SPEC CHECKSUMS:
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  Bolts-Swift: afbbaf8c8186e7f769be4afa656949c14087ba44
   Parse: 0abb63a0ff6fa34a3f64b81d595a294e2ece143a
+  ParseLiveQuery: 7bc437c3b986880ffe5f241a9921e37f45df0677
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: 1fe7bf479194127ef7730eca2fb43e20dd56993e
+PODFILE CHECKSUM: 710f2b7b281aa54ef4f7039088ace956c2bec04d
 
 COCOAPODS: 1.11.3

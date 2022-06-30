@@ -10,8 +10,14 @@
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
 #import "SceneDelegate.h"
+#import "ComposeViewController.h"
+#import "PostCell.h"
 
-@interface HomeFeedViewController ()
+@interface HomeFeedViewController () <ComposeViewControllerDelegate, PostCellDelegate, UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *homeFeedTableView;
+
+
+@property (strong, nonatomic) NSArray *arrayOfPosts;
 
 @end
 
@@ -20,7 +26,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.homeFeedTableView.dataSource = self;
+    self.homeFeedTableView.delegate = self;
+    [self reloadData];
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.arrayOfPosts.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
+    Post *post = self.arrayOfPosts[indexPath.row];
+    cell.imagePostImageView.file = post.image;
+    [cell.imagePostImageView loadInBackground];
+    cell.captionPostLabel.text = post.caption;
+//    cell.delegate  = self;
+    return cell;
+}
+
 - (IBAction)logoutUser:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         if (error != nil) {
@@ -39,6 +63,13 @@
     }];
 }
 
+- (IBAction)didTapCompose:(id)sender {
+    ComposeViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ComposeViewController"];
+    viewController.delegate = self;
+    [self.navigationController pushViewController: viewController animated:YES];
+}
+
+
 /*
 #pragma mark - Navigation
 
@@ -48,5 +79,36 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (void)didPost:(nonnull Post *)post {
+//    [self.arrayOfTweets insertObject:post atIndex:0];
+    [self.homeFeedTableView reloadData];
+
+}
+
+- (void)reloadData{
+    // construct query
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    //    [query whereKey:@"likesCount" greaterThan:@100];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    query.limit = 20;
+    
+
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            // do something with the array of object returned by the call
+//            for(Post *post in posts){
+//                [self.arrayOfPosts addObject:post];
+//            }
+            self.arrayOfPosts = posts;
+            NSLog(@"%@", error.localizedDescription);
+        }
+        [self.homeFeedTableView reloadData];
+    }];
+    
+}
 
 @end
