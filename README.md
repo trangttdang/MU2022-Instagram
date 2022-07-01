@@ -46,7 +46,8 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+- https://i.imgur.com/ar9Z5Cm.gif
+- https://i.imgur.com/sq8WovI.mp4
 
 GIF created with [Kap](https://getkap.co/).
 
