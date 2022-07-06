@@ -69,8 +69,10 @@
     
     
     cell.usernameLabel.text = post.author.username;
+    cell.usernamePostLabel.text = post.author.username;
     cell.userProfileImageView.file = post.author[@"profilePhoto"];
     [cell.userProfileImageView loadInBackground];
+    cell.userProfileImageView.layer.cornerRadius = cell.userProfileImageView.frame.size.width/2;
     cell.delegate  = self;
     cell.post = post;
     return cell;
