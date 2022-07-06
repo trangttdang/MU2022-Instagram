@@ -7,6 +7,7 @@
 
 #import "ComposeViewController.h"
 #import "Post.h"
+#import "MBProgressHUD.h"
 
 @interface ComposeViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *captionPostTextView;
@@ -26,16 +27,38 @@
     
 }
 - (IBAction)didTapPost:(id)sender {
-    [Post postUserImage:self.imagePostImageView.image withCaption:self.captionPostTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        if(error){
-            NSLog(@"Error composing Post: %@", error.localizedDescription);
-        }
-        else{
-            NSLog(@"Compose Post Success!");
-//                    [self dismissViewControllerAnimated:true completion:nil];
-            [self.navigationController popViewControllerAnimated:YES];
-        }
-    }];
+    
+//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+//        [Post postUserImage:self.imagePostImageView.image withCaption:self.captionPostTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+//            if(error){
+//                NSLog(@"Error composing Post: %@", error.localizedDescription);
+//            }
+//            else{
+//                NSLog(@"Compose Post Success!");
+//    //                    [self dismissViewControllerAnimated:true completion:nil];
+//                [self.navigationController popViewControllerAnimated:YES];
+//            }
+//        }];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//        });
+//    });
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.2 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [Post postUserImage:self.imagePostImageView.image withCaption:self.captionPostTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+                    if(error){
+                        NSLog(@"Error composing Post: %@", error.localizedDescription);
+                    }
+                    else{
+                        NSLog(@"Compose Post Success!");
+            //                    [self dismissViewControllerAnimated:true completion:nil];
+                        [self.navigationController popViewControllerAnimated:YES];
+                    }
+                }];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    });
 }
 
 - (void)getPicture{

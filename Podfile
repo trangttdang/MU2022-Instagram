@@ -9,6 +9,7 @@ target 'Instagram' do
   pod 'Parse'
   pod 'Parse/UI'
   pod 'ParseLiveQuery'
+  pod 'MBProgressHUD', '~> 1.2.0'
 
   target 'InstagramTests' do
     use_frameworks!

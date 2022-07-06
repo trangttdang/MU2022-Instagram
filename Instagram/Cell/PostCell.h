@@ -12,6 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @protocol PostCellDelegate
 - (void)didPost:(Post *)post;
+- (void)didTapUsername:(Post *) post;
 
 @end
 
@@ -21,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,weak) id<PostCellDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *datePostedLabel;
-
+@property (nonatomic,strong) Post *post;
 
 @end
 

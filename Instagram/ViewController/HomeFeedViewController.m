@@ -13,6 +13,7 @@
 #import "ComposeViewController.h"
 #import "PostCell.h"
 #import "DetailPostViewController.h"
+#import "ProfileViewController.h"
 
 @interface HomeFeedViewController () <ComposeViewControllerDelegate, PostCellDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *homeFeedTableView;
@@ -96,6 +97,12 @@
     [self.navigationController pushViewController: viewController animated:YES];
 }
 
+- (void)didTapUsername:(Post *)post{
+    ProfileViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
+    viewController.post = post;
+    
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 
 /*
 #pragma mark - Navigation
