@@ -49,6 +49,7 @@ Here's a walkthrough of implemented user stories:
 - https://i.imgur.com/ar9Z5Cm.gif
 - https://i.imgur.com/sq8WovI.mp4
 - Instagram Login screen
+
 <img src="https://i.imgur.com/PiOYbUD.jpg" width=200><br>
 
 ## Credits
