@@ -14,7 +14,7 @@
 @interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet PFImageView *profileImageView;
-@property (nonatomic, strong) PFFileObject *image;
+//@property (nonatomic, strong) PFFileObject *image;
 @property (weak, nonatomic) IBOutlet UICollectionView *PostCollectionView;
 @property (nonatomic, strong) NSArray *posts;
 
@@ -28,9 +28,19 @@
 //    PFUser *currentUser = [PFUser currentUser];
     self.PostCollectionView.dataSource = self;
     self.PostCollectionView.delegate = self;
-    self.profileImageView.file = self.image;
-    [self.profileImageView loadInBackground];
     [self fetchPosts];
+//    PFUser *currentUser = [PFUser currentUser];
+//    self.profileImageView.file = currentUser[@"profilePhoto"];
+    PFUser *selectedUser = self.post.author;
+    PFUser *currentUser = [PFUser currentUser];
+    if (selectedUser != currentUser){
+        self.profileImageView.file = selectedUser[@"profilePhoto"];
+    } else{
+        self.profileImageView.file = currentUser[@"profilePhoto"];
+    }
+    
+    [self.profileImageView loadInBackground];
+    
 //
 }
 
@@ -39,7 +49,18 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     //    [query whereKey:@"likesCount" greaterThan:@100];
     [query orderByDescending:@"createdAt"];
-    [query whereKey:@"author" equalTo: [PFUser currentUser]];
+    
+//    [query whereKey:@"author" equalTo: [PFUser currentUser]];
+    
+    PFUser *selectedUser = self.post.author;
+    PFUser *currentUser = [PFUser currentUser];
+    if (selectedUser != currentUser && selectedUser != nil){
+        [query whereKey:@"author" equalTo: selectedUser];
+    } else{
+        [query whereKey:@"author" equalTo: currentUser];
+    }
+//    [query whereKey:@"author" equalTo: selectedUser];
+    
     query.limit = 30;
     
 
@@ -126,9 +147,8 @@
     
     
     [self.profileImageView setImage:resizedImage];
-    self.image = [self getPFFileFromImage:resizedImage];
-        PFUser *currentUser = [PFUser currentUser];
-        currentUser[@"profilePhoto"] = self.image;
+    PFUser *currentUser = [PFUser currentUser];
+    currentUser[@"profilePhoto"] = [self getPFFileFromImage:resizedImage];
     
     [currentUser saveInBackground];
     // Dismiss UIImagePickerController to go back to your original view controller

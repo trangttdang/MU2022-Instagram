@@ -69,7 +69,10 @@
     
     
     cell.usernameLabel.text = post.author.username;
-    
+    cell.userProfileImageView.file = post.author[@"profilePhoto"];
+    [cell.userProfileImageView loadInBackground];
+    cell.delegate  = self;
+    cell.post = post;
     return cell;
 }
 

@@ -187,31 +187,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="523"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l3y-Tt-rah" customClass="PFImageView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l3y-Tt-rah" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="79" width="414" height="414"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="414" id="gpC-uh-X9E"/>
                                                         <constraint firstAttribute="width" constant="414" id="h3t-PO-lvr"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cq2-XF-Uki">
-                                                    <rect key="frame" x="20" y="422" width="79" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cq2-XF-Uki">
+                                                    <rect key="frame" x="20" y="448" width="79" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAx-2C-JDx">
-                                                    <rect key="frame" x="20" y="491" width="207" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAx-2C-JDx">
+                                                    <rect key="frame" x="20" y="501" width="207" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="This is picture description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrM-iO-H3z">
-                                                    <rect key="frame" x="20" y="467.5" width="196" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="This is picture description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrM-iO-H3z">
+                                                    <rect key="frame" x="20" y="477.5" width="196" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBP-kW-ViM" customClass="PFImageView">
+                                                    <rect key="frame" x="20" y="11" width="62" height="68"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="l3y-Tt-rah" firstAttribute="top" secondItem="cww-QH-pDd" secondAttribute="top" id="5hx-hY-Spq"/>
@@ -228,6 +232,7 @@
                                             <outlet property="captionPostLabel" destination="wrM-iO-H3z" id="dop-Du-Pa7"/>
                                             <outlet property="datePostedLabel" destination="fAx-2C-JDx" id="WQb-nB-o7z"/>
                                             <outlet property="imagePostImageView" destination="l3y-Tt-rah" id="Mpm-WN-dT7"/>
+                                            <outlet property="userProfileImageView" destination="cBP-kW-ViM" id="eIi-FE-ocW"/>
                                             <outlet property="usernameLabel" destination="Cq2-XF-Uki" id="SNf-bg-rAB"/>
                                         </connections>
                                     </tableViewCell>
@@ -409,11 +414,11 @@
             </objects>
             <point key="canvasLocation" x="6105.7971014492759" y="960.9375"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="HEK-f7-EVU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D8t-O7-xG3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="8KV-8I-VL6"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile_tab" selectedImage="profile_tab" id="8KV-8I-VL6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3yz-zU-zW7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -447,11 +452,11 @@
             </objects>
             <point key="canvasLocation" x="5015.9420289855079" y="211.60714285714286"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="xVh-v3-zNw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aSd-gp-av9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Xbt-UA-XCb"/>
+                    <tabBarItem key="tabBarItem" title="" image="feed_tab" selectedImage="feed_tab" id="Xbt-UA-XCb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Erh-sr-9rq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -468,7 +473,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="feed_tab" width="25" height="25"/>
         <image name="insta_camera_btn" width="25" height="25"/>
+        <image name="profile_tab" width="25" height="25"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
