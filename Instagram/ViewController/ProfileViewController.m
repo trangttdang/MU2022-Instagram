@@ -12,6 +12,8 @@
 #import "Parse/PFImageView.h"
 
 @interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (strong, nonatomic) IBOutlet UIButton *editProfilePhotoButton;
 
 @property (weak, nonatomic) IBOutlet PFImageView *profileImageView;
 //@property (nonatomic, strong) PFFileObject *image;
@@ -33,13 +35,18 @@
 //    self.profileImageView.file = currentUser[@"profilePhoto"];
     PFUser *selectedUser = self.post.author;
     PFUser *currentUser = [PFUser currentUser];
-    if (selectedUser != currentUser){
+    if (selectedUser != currentUser && selectedUser!= nil){
         self.profileImageView.file = selectedUser[@"profilePhoto"];
+        self.usernameLabel.text = selectedUser.username;
+        self.editProfilePhotoButton.hidden = YES;
+    
     } else{
         self.profileImageView.file = currentUser[@"profilePhoto"];
+        self.usernameLabel.text = currentUser.username;
     }
     
     [self.profileImageView loadInBackground];
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
     
 //
 }

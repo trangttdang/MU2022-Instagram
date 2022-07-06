@@ -10,6 +10,8 @@
 @interface DetailPostViewController ()
 @property (weak, nonatomic) IBOutlet PFImageView *detailPostImageView;
 @property (weak, nonatomic) IBOutlet UILabel *detailCaptionLabel;
+@property (weak, nonatomic) IBOutlet PFImageView *detailProfileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *detailUsernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailTimestampLabel;
 @end
 
@@ -20,10 +22,13 @@
     // Do any additional setup after loading the view.
     self.detailCaptionLabel.text = self.post.caption;
     self.detailPostImageView.file = self.post.image;
-    self.detailTimestampLabel.text = [NSString stringWithFormat:@"%@", self.post.createdAt];
     [self.detailPostImageView loadInBackground];
+    self.detailTimestampLabel.text = [NSString stringWithFormat:@"%@", self.post.createdAt];
     
-    
+    self.detailProfileImageView.file = self.post.author[@"profilePhoto"];
+    [self.detailProfileImageView loadInBackground];
+    self.detailProfileImageView.layer.cornerRadius = self.detailProfileImageView.frame.size.width/2;
+    self.detailUsernameLabel.text = self.post.author.username;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     // Configure the input format to parse the date string
     formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
