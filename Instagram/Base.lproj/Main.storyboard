@@ -8,6 +8,11 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OleoScript-Regular.ttf">
+            <string>OleoScript-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -17,46 +22,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Em-uv-rC2">
-                                <rect key="frame" x="148" y="190" width="118" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VhJ-pX-YIW">
-                                <rect key="frame" x="46" y="312" width="317" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VhJ-pX-YIW">
+                                <rect key="frame" x="46" y="310" width="322" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="uzW-cX-Cdf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCM-E2-voI">
-                                <rect key="frame" x="46" y="380" width="317" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCM-E2-voI">
+                                <rect key="frame" x="46" y="366" width="322" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2l-3M-7aA">
-                                <rect key="frame" x="46" y="457" width="60" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2l-3M-7aA">
+                                <rect key="frame" x="46" y="456.5" width="322" height="40"/>
+                                <color key="backgroundColor" red="0.1137254902" green="0.63137254899999995" blue="1" alpha="0.69803921570000005" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Login">
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="loginUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EBu-Z0-A1c"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v4-qs-naS">
-                                <rect key="frame" x="288" y="457" width="75" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
-                                <connections>
-                                    <action selector="registerUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bm4-3e-53D"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Em-uv-rC2">
+                                <rect key="frame" x="87" y="182" width="240.5" height="83"/>
+                                <fontDescription key="fontDescription" name="OleoScript-Regular" family="Oleo Script" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLf-gJ-Rpf">
+                                <rect key="frame" x="267" y="414" width="101" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.1137254902" green="0.63137254899999995" blue="0.99269742329999999" alpha="0.69803921570000005" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="hQq-bt-sFF">
+                                <rect key="frame" x="79" y="807" width="256" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffj-hl-R63">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v4-qs-naS">
+                                        <rect key="frame" x="181" y="0.0" width="75" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sign Up">
+                                            <color key="baseForegroundColor" red="0.1137254902" green="0.63137254899999995" blue="0.99269742329999999" alpha="0.69803921570000005" colorSpace="calibratedRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="registerUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bm4-3e-53D"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hQq-bt-sFF" secondAttribute="bottom" constant="24" id="0rX-4c-0dd"/>
+                            <constraint firstItem="VhJ-pX-YIW" firstAttribute="height" secondItem="QCM-E2-voI" secondAttribute="height" id="8RH-eC-VXH"/>
+                            <constraint firstItem="QCM-E2-voI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="8ju-y5-BZ2"/>
+                            <constraint firstItem="VhJ-pX-YIW" firstAttribute="width" secondItem="QCM-E2-voI" secondAttribute="width" id="Knb-wF-X6U"/>
+                            <constraint firstItem="Z2l-3M-7aA" firstAttribute="leading" secondItem="QCM-E2-voI" secondAttribute="leading" id="OOa-v4-Qkq"/>
+                            <constraint firstItem="VhJ-pX-YIW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="Qma-Fa-ZXK"/>
+                            <constraint firstItem="Z2l-3M-7aA" firstAttribute="width" secondItem="QCM-E2-voI" secondAttribute="width" id="R50-2p-57i"/>
+                            <constraint firstItem="QCM-E2-voI" firstAttribute="top" secondItem="VhJ-pX-YIW" secondAttribute="bottom" constant="16" id="WEL-Vz-RPK"/>
+                            <constraint firstItem="Z2l-3M-7aA" firstAttribute="height" secondItem="QCM-E2-voI" secondAttribute="height" id="XZe-Yv-aqe"/>
+                            <constraint firstItem="4Em-uv-rC2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="brK-s7-pQJ"/>
+                            <constraint firstItem="VhJ-pX-YIW" firstAttribute="top" secondItem="4Em-uv-rC2" secondAttribute="bottom" constant="45" id="cQU-vH-QaE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QCM-E2-voI" secondAttribute="trailing" constant="46" id="erj-0f-7v4"/>
+                            <constraint firstItem="4Em-uv-rC2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="138" id="jPL-NI-NyZ"/>
+                            <constraint firstItem="Z2l-3M-7aA" firstAttribute="top" secondItem="iLf-gJ-Rpf" secondAttribute="bottom" constant="28" id="kh9-3b-iCs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VhJ-pX-YIW" secondAttribute="trailing" constant="46" id="n0e-vC-cgx"/>
+                            <constraint firstItem="hQq-bt-sFF" firstAttribute="centerX" secondItem="Z2l-3M-7aA" secondAttribute="centerX" id="nW7-Q7-2FO"/>
+                            <constraint firstItem="iLf-gJ-Rpf" firstAttribute="top" secondItem="QCM-E2-voI" secondAttribute="bottom" constant="8" symbolic="YES" id="oYj-nB-Rdg"/>
+                            <constraint firstItem="iLf-gJ-Rpf" firstAttribute="trailing" secondItem="QCM-E2-voI" secondAttribute="trailing" id="scb-KK-LIN"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="QCM-E2-voI" id="bai-OR-sPI"/>
@@ -66,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3252" y="-91"/>
+            <point key="canvasLocation" x="3250.7246376811595" y="-91.071428571428569"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="EBY-58-tFq">
@@ -429,6 +474,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -28,6 +28,8 @@
 		949D0799286A654A0058C9D7 /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 949D0798286A654A0058C9D7 /* InstagramUITests.m */; };
 		949D079B286A654A0058C9D7 /* InstagramUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 949D079A286A654A0058C9D7 /* InstagramUITestsLaunchTests.m */; };
 		949D07A8286A6AA00058C9D7 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 949D07A7286A6AA00058C9D7 /* Keys.plist */; };
+		949FF23B2875563800A0C1ED /* OleoScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 949FF23A2875559F00A0C1ED /* OleoScript-Bold.ttf */; };
+		949FF23E2875563F00A0C1ED /* OleoScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 949FF2392875559F00A0C1ED /* OleoScript-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		949D0798286A654A0058C9D7 /* InstagramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramUITests.m; sourceTree = "<group>"; };
 		949D079A286A654A0058C9D7 /* InstagramUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramUITestsLaunchTests.m; sourceTree = "<group>"; };
 		949D07A7286A6AA00058C9D7 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		949FF2392875559F00A0C1ED /* OleoScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OleoScript-Regular.ttf"; path = "../../../../../Downloads/Oleo_Script/OleoScript-Regular.ttf"; sourceTree = "<group>"; };
+		949FF23A2875559F00A0C1ED /* OleoScript-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OleoScript-Bold.ttf"; path = "../../../../../Downloads/Oleo_Script/OleoScript-Bold.ttf"; sourceTree = "<group>"; };
 		C0D6A6B10D8AA55FE63BBDA3 /* Pods_InstagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA57280E667F97DC38567C29 /* Pods-InstagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.release.xcconfig"; path = "Target Support Files/Pods-InstagramTests/Pods-InstagramTests.release.xcconfig"; sourceTree = "<group>"; };
 		F1E685CBEEB805A504D00DE8 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 		949D0771286A65480058C9D7 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				949FF236287554A400A0C1ED /* Font */,
 				942539D1286D20F600EA0EF8 /* Cell */,
 				942539C7286CD7F300EA0EF8 /* Models */,
 				942539BA286A7A2900EA0EF8 /* ViewController */,
@@ -236,6 +241,15 @@
 				949D079A286A654A0058C9D7 /* InstagramUITestsLaunchTests.m */,
 			);
 			path = InstagramUITests;
+			sourceTree = "<group>";
+		};
+		949FF236287554A400A0C1ED /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				949FF23A2875559F00A0C1ED /* OleoScript-Bold.ttf */,
+				949FF2392875559F00A0C1ED /* OleoScript-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,8 +362,10 @@
 			files = (
 				949D07A8286A6AA00058C9D7 /* Keys.plist in Resources */,
 				949D0782286A65490058C9D7 /* LaunchScreen.storyboard in Resources */,
+				949FF23B2875563800A0C1ED /* OleoScript-Bold.ttf in Resources */,
 				949D077F286A65490058C9D7 /* Assets.xcassets in Resources */,
 				949D077D286A65480058C9D7 /* Main.storyboard in Resources */,
+				949FF23E2875563F00A0C1ED /* OleoScript-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +673,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F1E685CBEEB805A504D00DE8 /* Pods-Instagram.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -687,6 +704,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4687C81FD3935158A0C92DAD /* Pods-Instagram.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -755,6 +773,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44F3138AD1D451EFF471ADE2 /* Pods-Instagram-InstagramUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B66G8U4UU4;
@@ -772,6 +791,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 878D66AFD8DF4675A301FDAA /* Pods-Instagram-InstagramUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B66G8U4UU4;
