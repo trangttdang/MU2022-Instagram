@@ -2,7 +2,7 @@
 
 **Name of your app** is a photo sharing app using Parse as its backend.
 
-Time spent: **10** hours spent in total
+Time spent: **13** hours spent in total
 
 ## User Stories
 
@@ -25,12 +25,12 @@ The following **optional** features are implemented:
 - User Profiles:
   - [x] Allow the logged in user to add a profile photo
   - [x] Display the profile photo with each post
-  - [ ] Tapping on a post's username or profile photo goes to that user's profile page
-- [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse
+  - [x] Tapping on a post's username or profile photo goes to that user's profile page
+- [x] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse
 - [ ] User can comment on a post and see all comments for each post in the post details screen
 - [ ] User can like a post and see number of likes for each post in the post details screen
-- [ ] Style the login page to look like the real Instagram login page
-- [ ] Style the feed to look like the real Instagram feed
+- [x] Style the login page to look like the real Instagram login page
+- [x] Style the feed to look like the real Instagram feed
 - [ ] Implement a custom camera view
 
 The following **additional** features are implemented:
@@ -45,10 +45,11 @@ Please list two areas of the assignment you'd like to **discuss further with you
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-
+- (FINAL) https://i.imgur.com/hYssfIQ.mp4
 - https://i.imgur.com/ar9Z5Cm.gif
 - https://i.imgur.com/sq8WovI.mp4
-
+- Instagram Login screen
+![github image](https://i.imgur.com/PiOYbUD.jpg)
 GIF created with [Kap](https://getkap.co/).
 
 ## Credits
@@ -63,7 +64,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2022] [Trang Dang]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
